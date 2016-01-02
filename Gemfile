@@ -26,6 +26,7 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'execjs'
+gem 'therubyracer'
 
 gem 'haml'
 
