@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
         @item = Item.find(item_id)
         @order.items << @item
       end
-      OrderMailer.order_request(@order).deliver_now
+      OrderMailer.order_request(@order).deliver_later
       # flash[:success] = 'File upload worked'
       render json: @order
     else
