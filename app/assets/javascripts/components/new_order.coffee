@@ -125,6 +125,7 @@
 				}
 			})
 			success: (data) =>
+				@setState @getInitialState()
 				@setState complete: true
 
 
