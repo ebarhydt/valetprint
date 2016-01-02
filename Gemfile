@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rmagick'
 gem 'carrierwave'
 
+gem 'execjs'
+
 gem 'haml'
 
 gem 'fog'
