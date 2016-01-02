@@ -1,0 +1,82 @@
+.container
+  .col-md-8.order
+    %h2 Place an order
+    .upload.section
+      %span Choose a document you'd like to print
+      %form.form-inline
+        .form-group
+          %span.btn.btn-primary.btn-file
+            Browse
+            %input{type: "file"}
+          %input{type: "text", class: "form-control", :readonly => ""}
+        .form-group.btn-group{"data-toggle" => "buttons"}
+          %label.btn.btn-default
+            %input{type: "radio", name: "color" }
+            B&W
+          %label.btn.btn-default
+            %input.radio-color{type: "radio", name: "color"}
+            Color
+        .form-group.input-number
+          Copies
+          %input{type: "number", min: 1, value: 1, class: "form-control"}
+        %button.btn.btn-default.pull-right{type: "submit"}
+          Add to order
+    .current-order.section
+      %span Documents in your current order
+      .documents
+        %table
+          %tr
+            %td mydocument.jp
+            %td color
+            %td 1 copy
+            %td
+              %a.btn.btn-primary Edit
+            %td 
+              %a.btn.btn-danger Remove
+          %tr
+            %td mydocument.jp
+            %td color
+            %td 1 copy
+            %td
+              %a.btn.btn-primary Edit
+            %td 
+              %a.btn.btn-danger Remove
+
+  .checkout.col-md-4
+    %h2.text-center Checkout
+    .cost
+      %div 
+        %b Documents to print: 
+        0
+      %div 
+        %b Flat fee: 
+        $10
+      %div Please note: for the purposes of our beta trial, we are only charging a delivery fee ($10). If we move out of beta, we will also charge for pages printed.
+    %form
+      .form-group
+        %input{type: "text", placeholder: "Name", class: "form-control"}
+      .form-group
+        %input{type: "text", placeholder: "Delivery Address", class: "form-control"}
+      .form-group
+        %input{type: "text", placeholder: "Apt # or floor", class: "form-control"}
+      .form-group
+        %input{type: "text", placeholder: "Zip code", class: "form-control"}
+      .form-group
+        %input{type: "text", placeholder: "Email", class: "form-control"}
+      .form-group
+        %input{type: "text", placeholder: "Phone", class: "form-control"}
+    %div.text-center
+      %button.btn.btn-success.btn-print.text-center
+        %h2.text-center
+          Print
+  
+
+
+.container
+  .col-md-8
+    %h2 How It Works
+    Print from anywhere prints and delivers documents in New York City 24/7. Never wait in line at a print shop, deal with horrendous customer service, or pay for computer time again. We guarantee 3 hour delivery. If you're not 100% happy with you experience, we'll refund your order.
+
+.container
+  .col-md-8
+    %h2 FAQ

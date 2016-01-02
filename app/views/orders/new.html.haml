@@ -1,0 +1,27 @@
+.container
+  = react_component 'NewOrder', {data: @order }
+
+  .row
+    .col-md-8
+      %h2 How it works
+      Print from anywhere prints and delivers documents in New York City 24/7. Never wait in line at a print shop, deal with horrendous customer service, or pay for computer time again. We guarantee 3 hour delivery. If you're not 100% happy with you experience, we'll refund your order.
+
+  .row
+    .col-md-8
+      %h2 FAQ
+/ = form_for @order do |f|
+/   %p
+/     Address
+/     =f.text_field :address
+
+/   %p
+/     Documents
+/     %ul
+/     = f.fields_for :items, :html => {:multipart => true} do |items_form|
+/       = render 'item_fields', f: items_form 
+/       %li= link_to_add_fields "Add Another Document", f, :items
+/   %p
+/     = f.submit
+
+
+

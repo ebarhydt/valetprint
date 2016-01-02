@@ -1,0 +1,26 @@
+%h2
+  NEW ORDER
+
+%table
+  %tr
+    %td name
+    %td= @order.name
+  %tr
+    %td email
+    %td= @order.email
+  %tr
+    %td phone
+    %td= @order.phone
+  %tr
+    %td address
+    %td= @order.address
+  %tr
+    %td address2
+    %td= @order.address2
+  %tr
+    %td zipcode
+    %td= @order.zipcode
+
+- @items.each do |item|
+  = item.document.file.path
+  

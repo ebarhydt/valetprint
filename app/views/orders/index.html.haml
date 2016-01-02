@@ -1,0 +1,5 @@
+- @orders.each do |order|
+  %h4= "Order" + order.id.to_s
+  %ul
+    - order.items.each do |item|
+      %li= item.document

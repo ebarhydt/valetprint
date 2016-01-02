@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'montserratlight';
+    src: font-url('montserrat-light.eot');
+    src: font-url('montserrat-light.eot?#iefix') format('embedded-opentype'),
+         font-url('montserrat-light.woff2') format('woff2'),
+         font-url('montserrat-light.woff') format('woff'),
+         font-url('montserrat-light.ttf') format('truetype'),
+         font-url('montserrat-light.svg#montserratlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: font-url('montserrat-regular.eot');
+    src: font-url('montserrat-regular.eot?#iefix') format('embedded-opentype'),
+         font-url('montserrat-regular.woff2') format('woff2'),
+         font-url('montserrat-regular.woff') format('woff'),
+         font-url('montserrat-regular.ttf') format('truetype'),
+         font-url('montserrat-regular.svg#montserratregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratsemi_bold';
+    src: font-url('montserrat-semibold.eot');
+    src: font-url('montserrat-semibold.eot?#iefix') format('embedded-opentype'),
+         font-url('montserrat-semibold.woff2') format('woff2'),
+         font-url('montserrat-semibold.woff') format('woff'),
+         font-url('montserrat-semibold.ttf') format('truetype'),
+         font-url('montserrat-semibold.svg#montserratsemi_bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+body {
+	background: #fbfbf9;
+	color: #585754;
+	font-size: 15px;
+}
+
+h1, h2 {
+	font-family: 'montserratregular';
+} 
+
+tr {
+	border: 1px solid #ccc;
+}
+
+td {
+	border: 1px solid #ccc;
+	background: #f5f5f5;
+}
+
+td, .upload form {
+	padding: 5px;
+	padding-left: 8px;
+}
+
+table {
+	width: 100%;
+}
+
+.upload form {
+	background: #ffebcd;
+}
+
+.upload form, .documents {
+	margin-top: 10px;
+}
+
+.section {
+	margin-bottom: 30px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    margin-right: 3px;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.btn-print {
+	margin-top: 10px;
+	width: 50%;
+	margin-bottom: 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	h2 {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}
+
+.radio-color {
+}
+
+input[type='number'] {
+	width: 70px !important;
+	margin-left: 5px;
+}
+
+.edit input, .edit a { 
+	margin-left: 10px;
+}
+
+.input-number {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.empty-order {
+	padding: 50px;
+}
+
+.radio-buttons {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.cost {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.notice {
+	font-size: .8em;
+}
+
+.order-info {
+	margin-bottom: 20px;
+}
+
+.content {
+	color: #585754;
+}
+
+#header {
+	background: #b11e1e;
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.checkout {
+	background: #f5f5f5;
+	border: 1px solid #ccc
+}
+
+.settings {
+	display: inline;
+}
