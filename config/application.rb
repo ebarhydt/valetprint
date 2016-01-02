@@ -25,7 +25,9 @@ module PrintFromAnywhere
     config.react.addons = true
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-    config.assets.precompile += %w( .svg .eot .woff .ttf )
+    config.assets.precompile += %w( .svg .eot .woff .ttf *.png *.jpg *.jpeg *.gif)
+
+    config.autoload_paths += Dir[File.join(Rails.root, "lib", "core_ext", "*.rb")].each {|l| require l }
 
 
   end

@@ -17,7 +17,6 @@
 //= require react_ujs
 //= require components
 //= require bootstrap
-//= require_self
 //= require_tree .
 
 function startTime() {
