@@ -307,9 +307,9 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
-  pg (= 0.15.1)
+  pg
   rails (= 4.2.0)
-  rails_12factor (= 0.0.2)
+  rails_12factor
   react-rails (~> 1.0)
   rmagick
   sass-rails (~> 5.0)
