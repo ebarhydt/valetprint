@@ -33,6 +33,8 @@
 		formData.append 'item[document]', @refs.file.getDOMNode().files[0]
 		formData.append 'item[copies]', @state.copies
 		formData.append 'item[color]', @state.color
+		React.findDOMNode(@refs.file).value = ""
+		@setState @getInitialState()
 		$.ajax
 			url: '/items'
 			data: formData
@@ -42,9 +44,8 @@
 			success: (data) => 
 				@props.handleNewDocument data
 				@setState loading: null
-		React.findDOMNode(@refs.file).value = ""
-		@setState @getInitialState()
 		@setState loading: true
+
 
 	handleChange: (event) ->
 		name = event.target.name
@@ -123,13 +124,13 @@
 					type: 'submit'
 					className: 'btn btn-default pull-right'
 					'Add to order'
-				@loadingGif()
+				@loadingGifAdd()
 
 	warning: ->
 		return null unless @state.noFile
 		React.DOM.div null, @state.noFile
 
-	loadingGif: ->
+	loadingGifAdd: ->
 		return null unless @state.loading
 		React.DOM.img
 			className: 'pull-right'

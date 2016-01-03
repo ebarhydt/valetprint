@@ -26,6 +26,19 @@
 			items: null,
 		}
 
+	getDeliveryTime: () ->
+		today = new Date()
+		hours = today.getHours()
+		if hours > 11
+			daytime = 'pm'
+		else
+			daytime = 'am'
+		if hours > 12
+			hours = hours - 12
+		hours = hours + 3
+		minutes = today.getMinutes()
+		hours + ':' + minutes + daytime
+
 	toggleComplete: (e) ->
 		e.preventDefault()
 		@setState complete: false
@@ -102,7 +115,6 @@
 			return
 		for own key of @state.customer
 			return if @state.warnings[key]
-		@state.loading.orderRequest = true
 		items = @state.items
 		c = @state.customer
 		itemsarray = []
@@ -128,6 +140,7 @@
 			success: (data) =>
 				@setState @getInitialState()
 				@setState complete: true
+			@state.loading.orderRequest = true
 
 
 
@@ -148,7 +161,7 @@
 					src: '/assets/giphy.gif'
 			React.DOM.div
 				className: 'col-sm-8'
-				React.DOM.h2 null, 'You\'re order is in progress!'
+				React.DOM.h2 null, 'You\'re order is in progress and will arrive by ' + @getDeliveryTime()
 				React.DOM.div null,
 					'You will receive an email confirmation shortly. If you have any questions, please feel free to email Ethan Barhydt at ethan@valetprint.com or call/text 847-494-2629.'
 				React.DOM.a

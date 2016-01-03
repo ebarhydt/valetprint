@@ -3,6 +3,13 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def show
+    @item = Item.find(params[:id])
+    @document = @item.document
+    data = open(@document.url) 
+    send_data data.read, filename: @document.file.filename, disposition: 'attachment'
+  end 
+
   def new
     @item = Item.new
   end

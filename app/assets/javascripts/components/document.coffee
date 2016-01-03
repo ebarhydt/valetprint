@@ -22,6 +22,15 @@
 				@setState edit: false
 				@props.handleEditItem @props.item, data
 
+	handleDownload: (e) ->
+		alert @props.item.id
+		$.ajax
+			method: 'GET'
+			dataType: 'JSON'
+			url: '/items/' + @props.item.id
+			success: () =>
+				alert "yo"
+
 	handleDelete: (e) ->
 		e.preventDefault()
 		$.ajax
@@ -33,7 +42,10 @@
 
 	documentForm: ->
 		React.DOM.tr null,
-			React.DOM.td null, @props.item.document
+			React.DOM.td null, 
+				React.DOM.a
+					href: '/items/' + @props.item.id
+					@props.item.document
 			React.DOM.td 
 				className: 'form-group radio-buttons btn-group'
 				"data-toggle": "buttons"
@@ -78,7 +90,10 @@
 
 	documentRow: ->
 		React.DOM.tr null,
-			React.DOM.td null, @props.item.document
+			React.DOM.td null, 
+				React.DOM.a
+					href: '/items/' + @props.item.id
+					@props.item.document
 			React.DOM.td null,
 				if @props.item.color
 					'Print in color'

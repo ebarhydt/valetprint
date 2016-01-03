@@ -3,14 +3,12 @@
 	getInitialState: ->
 		loading: @props.loading
 
-
 	loadingGif: ->
-		if @props.loading
-			React.DOM.img
-				src: "/assets/ajax-loader.gif"
-
-	handleClick: () ->
-		alert "hey"
+		return null unless @props.loading
+		React.DOM.img
+			className: 'loader'
+			src: "/assets/ajax-loader.gif"
+			alt: "can't show"
 
 	render: -> 
 		React.DOM.h2
@@ -84,7 +82,7 @@
 						onChange: (event) =>
 							@props.onChange(event.target.value, event.target.name)
 						React.DOM.option(value: "placeholder", "Choose a payment method")
-						React.DOM.option(value: paymethod, key: paymethod, paymethod) for paymethod in ["Pay cash on delivery", "Paypal (we'll send email instructions)", "Venmo (we'll send email instructions)"]
+						React.DOM.option(value: paymethod, key: paymethod, paymethod) for paymethod in ["Pay cash on delivery", "Pay with credit/debit on delivery", "Paypal (we'll send email instructions)", "Venmo (we'll send email instructions)"]
 
 				React.DOM.div
 					className: 'text-center'
@@ -96,11 +94,7 @@
 							'Print'
 					@loadingGif()
 
-	loadingGif: ->
-		return null unless @props.loading
-		React.DOM.img
-			className: ''
-			src: "/assets/ajax-loader.gif"
+
 
 
 
