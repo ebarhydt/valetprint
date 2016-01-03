@@ -102,6 +102,7 @@
 			return
 		for own key of @state.customer
 			return if @state.warnings[key]
+		@state.loading.orderRequest = true
 		items = @state.items
 		c = @state.customer
 		itemsarray = []
@@ -163,7 +164,9 @@
 				
 				React.createElement NewDocument,
 					handleNewDocument: @addToOrder,
+					handleLoading: @toggleLoading
 					validFile: @state.validFile
+					warning: @state.warnings.noFile
 				
 				React.DOM.div
 					className: 'current-order section'
@@ -186,7 +189,7 @@
 					validatePrinter: @readyToPrint()
 					onSubmit: @formSubmitted
 					warnings: @state.warnings
-
+					loading: @state.loading.orderRequest
 	render: ->
 		if @state.complete
 			@orderComplete()

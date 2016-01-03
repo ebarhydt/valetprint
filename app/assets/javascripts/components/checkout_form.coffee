@@ -9,6 +9,9 @@
 			React.DOM.img
 				src: "/assets/ajax-loader.gif"
 
+	handleClick: () ->
+		alert "hey"
+
 	render: -> 
 		React.DOM.h2
 			className: 'text-center'
@@ -91,8 +94,13 @@
 						React.DOM.h2 
 							className: 'text-center'
 							'Print'
+					@loadingGif()
 
-
+	loadingGif: ->
+		return null unless @props.loading
+		React.DOM.img
+			className: ''
+			src: "/assets/ajax-loader.gif"
 
 
 

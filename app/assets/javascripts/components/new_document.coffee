@@ -7,6 +7,8 @@
 		validCopies: true
 		copies: 1
 		filename: ''
+		loading: null
+		noFile: null
 
 	newDocumentChanged: (event) ->
 		@state.validFile = true
@@ -16,9 +18,17 @@
 
 	handleAddToOrder: (e) ->
 		e.preventDefault()
-		alert "done"
+
+	validFile: () ->
+		@state.noFile = if (@state.filename) then null else "Add a file first"
 
 	handleSubmit: (event) ->
+		event.preventDefault()
+		@validFile()
+		@forceUpdate()
+		if @state.noFile
+			return
+		event.target.disabled == true
 		formData = new FormData()
 		formData.append 'item[document]', @refs.file.getDOMNode().files[0]
 		formData.append 'item[copies]', @state.copies
@@ -30,15 +40,15 @@
 			processData: false
 			type: 'POST'
 			success: (data) => 
-				React.findDOMNode(@refs.file).value = ""
-				@setState @getInitialState()
 				@props.handleNewDocument data
-		event.preventDefault()
+				@setState loading: null
+		React.findDOMNode(@refs.file).value = ""
+		@setState @getInitialState()
+		@setState loading: true
 
 	handleChange: (event) ->
 		name = event.target.name
 		@setState "#{ name }": event.target.value
-		alert @state.copies
 
 	handleColorChange: (event) ->
 		unless event.target.textContent == @state.radioActive
@@ -51,7 +61,8 @@
 	render: ->
 		React.DOM.div
 			className: 'upload section'
-			React.DOM.span null, 'Choose a document you\'d like to print'
+			'Choose a document you\'d like to print'
+			@warning()
 			React.DOM.form
 				className: 'form-inline'
 				onSubmit: @handleSubmit
@@ -111,12 +122,18 @@
 				React.DOM.button
 					type: 'submit'
 					className: 'btn btn-default pull-right'
-					disabled: !@valid()
 					'Add to order'
+				@loadingGif()
 
+	warning: ->
+		return null unless @state.noFile
+		React.DOM.div null, @state.noFile
 
-
-
+	loadingGif: ->
+		return null unless @state.loading
+		React.DOM.img
+			className: 'pull-right'
+			src: "/assets/ajax-loader.gif"
 
 
 
