@@ -36,14 +36,33 @@
     font-style: normal;
 }
 
-
-
-
+.header a {
+	color: white;
+	padding-right: 10px;
+}
 
 body {
 	background: #fbfbf9;
 	color: #585754;
 	font-size: 15px;
+}
+
+footer {
+	background: #f5f5f5;
+	border-top: 1px solid #ccc;
+	height: 60px;
+	div {
+		padding-top: 15px;
+	}
+}
+
+.title a{
+	text-decoration: none;
+	color: white;
+}
+
+.faq {
+	margin-bottom: 20px;
 }
 
 h1, h2 {

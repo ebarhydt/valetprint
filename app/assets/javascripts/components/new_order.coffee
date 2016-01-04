@@ -36,7 +36,7 @@
 		if hours > 12
 			hours = hours - 12
 		hours = hours + 3
-		minutes = today.getMinutes()
+		minutes = ('0' + today.getMinutes()).slice(-2)
 		hours + ':' + minutes + daytime
 
 	toggleComplete: (e) ->

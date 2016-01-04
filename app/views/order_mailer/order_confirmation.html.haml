@@ -1,23 +1,18 @@
 %p Hey there,
 
 %p
-It's Ethan, founder of Valet Print. This email confirms that your printing order is in progress! You can find a summary of your order below. 
-%p
-Thanks for giving Valet Print a spin. If you have any questions about your order, feel free to email me or give me a call at 847-494-2629. 
+It's Ethan, founder of Valet Print. This email confirms that your printing order is in progress! You can find a summary of your order below. Thanks so much for giving Valet Print a spin. If you have any questions about your order, feel free to email me or give me a call at 847-494-2629. 
 %p
 Cheers,
 %br
 Ethan
+%br
+%br
 
--
-
-Your Order
+="YOUR ORDER"
 %ul
 - @items.each do |item|
   %li
     = "#{item.document.file.filename} (#{item.get_color}, #{pluralize(item.copies, 'copy')})"
-%br
-%div
-  Your order will arrive by:
-  = @order.created_at + 3.hours
+
   

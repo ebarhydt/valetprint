@@ -13,8 +13,11 @@
 <% flash.each do |key, value| %>
   <%= content_tag(:div, value, class: "alert alert-#{key}") %>
 <% end %>
-<div id="content">
-<%= yield %>
-
+<div id="content" class="container">
+	<%= yield %>
+</div>
+<footer>
+	<div class="text-center">&copy2016 Valet Print</div>
+</footer>
 </body>
 </html>

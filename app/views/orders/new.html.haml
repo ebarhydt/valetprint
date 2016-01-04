@@ -1,14 +1,6 @@
-.container
-  = react_component 'NewOrder', {data: @order }
+= react_component 'NewOrder', {data: @order }
 
-  .row
-    .col-md-8
-      %h2 How it works
-      Print from anywhere prints and delivers documents in New York City 24/7. Never wait in line at a print shop, deal with horrendous customer service, or pay for computer time again. We guarantee 3 hour delivery. If you're not 100% happy with you experience, we'll refund your order.
 
-  .row
-    .col-md-8
-      %h2 FAQ
 / = form_for @order do |f|
 /   %p
 /     Address
