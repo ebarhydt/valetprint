@@ -1,7 +1,8 @@
 .container
   .col-md-12.header
     #time.pull-right
-      =link_to 'How it works', static_pages_about_path
+      %span#about
+        =link_to 'How it works', static_pages_about_path
       =link_to 'Home', root_url
     %br
     .text-center 
@@ -12,3 +13,11 @@
 
 
 
+
+:javascript
+  $('#about').click( function() {
+    mixpanel.track('page viewed', {
+      'page name' : 'about',
+      'url' : window.location.pathname  
+    })
+  });

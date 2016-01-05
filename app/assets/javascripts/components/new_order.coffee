@@ -138,6 +138,7 @@
 				}
 			})
 			success: (data) =>
+				mixpanel.track('submit order')
 				@setState @getInitialState()
 				@setState complete: true
 			@state.loading.orderRequest = true

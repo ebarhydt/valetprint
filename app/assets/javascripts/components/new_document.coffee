@@ -41,7 +41,8 @@
 			contentType: false
 			processData: false
 			type: 'POST'
-			success: (data) => 
+			success: (data) =>
+				mixpanel.track('submit new document') 
 				@props.handleNewDocument data
 				@setState loading: null
 		@setState loading: true
