@@ -1,8 +1,8 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     provider: "AWS",
-    aws_access_key_id: 'AKIAJRCTY3ULEUUYIY7A',
-    aws_secret_access_key: '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'
+    aws_access_key_id: Rails.application.secrets.aws_access_key_id,
+    aws_secret_access_key: Rails.application.secrets.aws_secret_access_key
   }
   config.fog_directory = "print-from-anywhere"
 end
